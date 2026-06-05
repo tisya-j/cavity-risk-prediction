@@ -135,6 +135,13 @@ This domain input helped validate key assumptions regarding dietary behavior, or
 
 ---
 
+
+## Potential Applications
+
+This framework can be extended to preventive dental screening tools, enabling early identification of high-risk populations for targeted intervention.
+
+---
+
 ## Notes
 
 - Dietary variables may contain recall bias inherent in NHANES self-reported data  
