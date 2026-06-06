@@ -44,14 +44,21 @@ Dental caries is a multifactorial condition influenced by overlapping demographi
 
 The underlying data is extracted from the National Health and Nutrition Examination Survey (NHANES). To transition this model into a user-friendly screening product, the deployment layer abstracts confusing data codes into intuitive consumer metrics:
 
-* **Socioeconomic Localization:** Raw NHANES income indices (`INDHHIN2`) are abstracted into mapped annual household dropdown brackets localized in Indian Rupees (INR, ₹).
+* **Socioeconomic Localization:** Raw NHANES income indices (`INDHHIN2`) are abstracted into mapped annual household dropdown brackets localized in Indian Rupees (INR, ₹) and adjusted for Purchasing Price Parity (PPP)
 * **Automated Biometrics:** Manual BMI input criteria are abstracted out. The application accepts everyday inputs (**Height in cm** and **Weight in kg**), calculating BMI automatically behind the scenes:
   $$\text{BMI} = \frac{\text{Weight (kg)}}{\left(\frac{\text{Height (cm)}}{100}\right)^2}$$
-* **Engineered Metabolic Proxy:** Mapped internally using a custom reverse-engineered ratio formula:
-  $$\text{waist\_bmi\_ratio} = \frac{\text{Waist Circumference (cm)}}{\text{Calculated BMI} + 1}$$
 * **Engineered Oral Behavior Index:** Compiled internally as an aggregate integer (`oral_risk`) summing affirmative responses across poor self-reported health symptoms, nicotine consumption habits, and lack of dental checkups over the preceding 12 months.
 
 ---
+
+###  Clinical Domain Validation & Professional Advisory
+To ensure statistical robustness and practical clinical utility, the feature engineering pipeline and regional localization criteria were reviewed and audited in direct consultation with **practicing dental professionals**. 
+
+Key strategic advice incorporated from medical experts includes:
+1. **Behavioral Risk Compounding:** Validated that separate lifestyle metrics (tobacco use, self-reported localized pain, and avoidance of dental scale-and-clean checkups) should be consolidated into a unified behavioral index (`oral_risk`) to model how compounding bad habits exponentially raise the rate of cariogenic tooth decay.
+2. **Socioeconomic Baseline Calibration:** Advised that raw income metrics from a US public health registry would misrepresent localized baseline vulnerabilities without accounting for geographical purchasing indices. Implementing the **PPP adjustment layer** successfully calibrated the socioeconomic risk signals to accurately reflect real-world local contexts.
+3. **Actionable Clinical Translation:** Advised transitioning from technical, raw data indices to transparent reference metrics (World Health Organization free sugar benchmarks, clear systemic vital targets) on the UI to guide high-risk screening candidates toward meaningful, preventive checkups.
+
 
 ## Model Evaluation
 
