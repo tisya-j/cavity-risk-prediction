@@ -2,7 +2,7 @@
 
 An end-to-end explainable machine learning system built to predict population-level dental cavity risk. This project bridges predictive modeling with clinical interpretability using SHAP-based feature attribution and hosts a localized, patient-centered screening interface.
 
-**Live Deployment Interface:** [Interact with the Web Application on Hugging Face Spaces](https://huggingface.co/spaces/Tisya-J/cavity-risk-prediction)
+**Live Deployment Interface:** [Interact with the Web Application on Hugging Face Spaces](https://huggingface.co)
 
 ---
 
@@ -56,7 +56,6 @@ The underlying data is extracted from the National Health and Nutrition Examinat
 ## Model Evaluation
 
 Models were optimized using a stratified train-test split configuration to strictly isolate and evaluate target class boundaries.
-
 
 
 | Metric | Baseline Logistic Regression | Production XGBoost Classifier |
